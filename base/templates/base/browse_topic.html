@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<ul class="topics__list">
+    {% for topic in topics%}
+    <li>
+        <a href="{% url 'home' %}?q={{topic.topic}}"> {{topic.topic}} <span>{{topic.room_set.all.count}}</span></a>
+      
+    </li>
+    {%endfor%}
+</ul>
+{% endblock content%}
